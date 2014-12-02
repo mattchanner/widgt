@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<feature>
+    <name>jquery</name>
+    <script src="jquery-2.1.1.min.js" />
+</feature>

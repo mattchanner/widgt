@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<feature>
+    <name>http://widgt.com/live-reload</name>
+    <script src="jquery-1.6.4.js" />
+    <script src="jquery.signalR-2.1.2.js" />
+    <script src="livereloader.js" />
+</feature>

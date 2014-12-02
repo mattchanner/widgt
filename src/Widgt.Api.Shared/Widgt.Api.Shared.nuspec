@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Widgt.Api.Shared</id>
+    <version>1.0.0.0</version>
+    <authors>Matt Channer</authors>
+    <owners>Matt Channer</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Shared API library for REST client access to Widgt data</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>Widgt API</tags>
+  </metadata>
+</package>

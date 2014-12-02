@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+        id          = "http://example.org/exampleWidget"
+        version     = "2.0 Beta"
+        height      = "200"
+        width       = "400"
+        viewmodes   = "fullscreen"
+        xml:lang="en">
+
+    <name short="Example 2.0" xml:lang="en">
+        The example Widget!
+    </name>
+
+    <name short="Example 2.0" xml:lang="fr">
+        French example widget
+    </name>
+
+    <feature name="http://example.com/camera" xml:lang="en">
+        <param name="autofocus" value="true"/>
+    </feature>
+
+    <feature name="http://example.com/camera/fr" xml:lang="fr">
+        <param name="autofocus-fr" value="true"/>
+    </feature>
+
+    <preference name     = "apikey"
+                value    = "ea31ad3a23fd2f"
+                readonly = "true" />
+
+    <description xml:lang="en">
+        This element would be used.
+    </description>
+
+    <description xml:lang="en">
+        This element would be ignored because there is already
+        a description element that uses xml:lang="en".
+    </description>
+
+    <description>
+        This element is unlocalized, and would be used if the user agent's
+        locale does not match any localized description elements.
+    </description>
+
+    <description xml:lang="">
+        This element would be ignored because there is already an unlocalized
+        description element! Using xml:lang="" makes this element behave as if
+        it is unlocalized.
+    </description>
+
+    <author href  = "http://foo-bar.example.org/"
+            email = "foo-bar@example.org">Foo Bar Corp</author>
+
+    <icon src="icons/example.png"/>
+    <icon src="icons/boo.png"/>
+    <content src="myWidget.html"/>
+
+    <license href="http://opensource.org/licenses/MIT" xml:lang="en">
+        Example license (based on MIT License)
+        Copyright (c) 2008 The Foo Bar Corp.
+        THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS
+        OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+        CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+        INSULT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+        SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    </license>
+</widget>

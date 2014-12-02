@@ -1,0 +1,23 @@
+﻿<widget xmlns="http://www.w3.org/ns/widgets">
+
+    <description xml:lang="en">
+        This element would be used.
+    </description>
+
+    <description xml:lang="en">
+        This element would be ignored because there is already
+        a description element that uses xml:lang="en".
+    </description>
+
+    <description>
+        This element is unlocalized, and would be used if the user agent's
+        locale does not match any localized description elements.
+    </description>
+
+    <description xml:lang="">
+        This element would be ignored because there is already an unlocalized
+        description element! Using xml:lang="" makes this element behave as if
+        it is unlocalized.
+    </description>
+
+</widget>

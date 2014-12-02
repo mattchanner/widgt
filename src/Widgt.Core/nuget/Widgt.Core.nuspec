@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Widgt.Core</id>
+    <version>0.0.1</version>
+    <authors>Matt Channer</authors>
+    <owners>Matt Channer</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/mattchanner</projectUrl>
+    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The Core Widgt Library</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>Widgt Widget W3C WebApp</tags>
+  </metadata>
+</package>
