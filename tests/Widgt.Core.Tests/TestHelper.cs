@@ -29,7 +29,6 @@
 namespace Widgt.Core.Tests
 {
     using System.IO;
-    using System.Reflection;
     using System.Xml.Linq;
 
     using Widgt.Core.Model;
@@ -37,7 +36,7 @@ namespace Widgt.Core.Tests
     /// <summary>
     /// Helper class for loading test documents
     /// </summary>
-    internal class TestHelper
+    internal static class TestHelper
     {
         /// <summary>
         /// Helper used to load a widget from file
@@ -66,7 +65,7 @@ namespace Widgt.Core.Tests
         /// </summary>
         /// <param name="shortName">The short file name to use</param>
         /// <returns>The loaded and parsed document</returns>
-        public static Stream GetConfigurationFileAsStream(string shortName)
+        private static Stream GetConfigurationFileAsStream(string shortName)
         {
             string fullName = "ConfigFiles\\" + shortName + ".xml";
 
