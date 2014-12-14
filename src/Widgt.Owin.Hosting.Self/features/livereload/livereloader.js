@@ -1,7 +1,7 @@
 ﻿$(function () {
 
     var hubs = document.createElement("script");
-    hubs.src = "http://localhost:9000/signalr/hubs";
+    hubs.src = "/signalr/hubs";
     hubs.type = "text/javascript";
     $("document, head").append(hubs);
 
