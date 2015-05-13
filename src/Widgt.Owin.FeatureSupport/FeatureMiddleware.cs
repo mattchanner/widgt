@@ -132,6 +132,7 @@ namespace Widgt.Features
 
             string featureId = queryString.Get("featureId");
             string resource = queryString.Get("file");
+
             if (string.IsNullOrEmpty(featureId) || string.IsNullOrEmpty(resource)) return;
 
             Core.Features.Feature feature;
@@ -141,6 +142,7 @@ namespace Widgt.Features
 
                 string fullPath = Path.Combine(feature.FeatureDirectory.FullName, resource);
                 FileInfo file = new FileInfo(fullPath);
+
                 if (file.Exists)
                 {
                     environment.SetContentTypeForFile(file.Name);
@@ -213,12 +215,17 @@ namespace Widgt.Features
                 var scope = scriptCache.Engine.CreateScope();
 
                 code.Execute(scope);
+
                 var middleware = scope.GetVariable<MiddlewareFunc>("invoke");
+
                 if (middleware != null)
                 {
                     PythonDictionary pyDict = new PythonDictionary();
+
                     foreach (var pair in parameters)
+                    {
                         pyDict.Add(pair.Key, pair.Value);
+                    }
 
                     return middleware(environment, pyDict, Logger);
                 }
