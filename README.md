@@ -23,7 +23,7 @@ Deployment of widgets is done via a REST interface using WebApi
 ## OWIN middleware
 THe server has been written using OWIN middleware.  This means it can be hosted in a variety of places (IIS, self hosted, Linux, Mac)
 
-# Database persistance using code first Entity Framework 6
+## Database persistance using code first Entity Framework 6
 The persistence layer is pluggable, but by default uses Code First Entity Framework.  An example using SQL Server CE is provided.
 
 
