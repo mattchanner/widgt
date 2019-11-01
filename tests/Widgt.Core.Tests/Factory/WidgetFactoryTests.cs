@@ -32,7 +32,7 @@ namespace Widgt.Core.Tests.Parser
     using System.IO;
 
     using NUnit.Framework;
-    
+
     using Widgt.Core.Exceptions;
     using Widgt.Core.Factory;
     using Widgt.Core.Features;
@@ -64,9 +64,9 @@ namespace Widgt.Core.Tests.Parser
                 directory.Create();
 
                 widgetOracle = new WidgtModelFactory(
-                    directory, 
-                    new TransientWidgtRepository(), 
-                    new NullFeatureProcessor(), 
+                    directory,
+                    new TransientWidgtRepository(),
+                    new NullFeatureProcessor(),
                     new DefaultStartFileFactory());
             }
 
@@ -88,38 +88,38 @@ namespace Widgt.Core.Tests.Parser
             /// <summary>
             /// Throws an argument null exception when the input stream is null
             /// </summary>
-            [Test, ExpectedException(typeof(ArgumentNullException))]
+            [Test]
             public void It_throws_an_exception_with_a_null_stream()
             {
-                widgetOracle.Deploy(null);
+                Assert.Throws<ArgumentNullException>(() => widgetOracle.Deploy(null));
             }
 
             /// <summary>
             /// Throws a WidgetArchiveException when the input stream does not represent a valid zip file
             /// </summary>
-            [Test, ExpectedException(typeof(WidgetArchiveException))]
+            [Test]
             public void It_throws_an_exception_when_input_stream_is_not_a_zip_archive()
             {
                 MemoryStream memoryStream = new MemoryStream(new byte[] { 0, 0, 0, 0, 0 });
-                widgetOracle.Deploy(memoryStream);
+                Assert.Throws<WidgetArchiveException>(() => widgetOracle.Deploy(memoryStream));
             }
 
             /// <summary>
             /// Thrown when the zip does not contain a config file
             /// </summary>
-            [Test, ExpectedException(typeof(InvalidWidgetArchiveException))]
+            [Test]
             public void It_throws_an_exception_when_zip_does_not_contain_a_manifest()
             {
-                widgetOracle.Deploy(this.OpenWidgetFile("noconfigfile"));
+                Assert.Throws<InvalidWidgetArchiveException>(() => widgetOracle.Deploy(this.OpenWidgetFile("noconfigfile")));
             }
 
             /// <summary>
             /// Thrown when the zip does not contain a config file
             /// </summary>
-            [Test, ExpectedException(typeof(InvalidWidgetArchiveException))]
+            [Test]
             public void It_throws_an_exception_when_zip_does_contain_a_manifest_in_a_sub_dir()
             {
-                widgetOracle.Deploy(this.OpenWidgetFile("ConfigInWrongDir"));
+                Assert.Throws<InvalidWidgetArchiveException>(() => widgetOracle.Deploy(this.OpenWidgetFile("ConfigInWrongDir")));
             }
 
             /// <summary>

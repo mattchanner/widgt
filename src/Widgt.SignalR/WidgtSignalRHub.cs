@@ -39,18 +39,12 @@ namespace Widgt.SignalR
         /// Notifies all clients when a new widget has been deployed
         /// </summary>
         /// <param name="widgetId">The ID of the widget</param>
-        public void Deployed(string widgetId)
-        {
-            Clients.All.widgetDeployed(widgetId);
-        }
+        public void Deployed(string widgetId) => Clients.All.widgetDeployed(widgetId);
 
         /// <summary>
         /// Notifies all clients when a widget has been un-deployed
         /// </summary>
         /// <param name="widgetId">The ID of the widget</param>
-        public void Undeployed(string widgetId)
-        {
-            Clients.All.widgetUndeployed(widgetId);
-        }
+        public void Undeployed(string widgetId) => Clients.All.widgetUndeployed(widgetId);
     }
 }

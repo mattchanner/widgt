@@ -33,7 +33,6 @@ namespace Embedding
     using System.Web.Http.Dispatcher;
 
     using Microsoft.Owin.Cors;
-    using Microsoft.Practices.Unity;
 
     using global::Owin;
 
@@ -47,6 +46,7 @@ namespace Embedding
     using Widgt.Features;
     using Widgt.Owin;
     using Widgt.SignalR;
+    using Unity;
 
     /// <summary>
     /// The startup class is used to configure the OWIN application

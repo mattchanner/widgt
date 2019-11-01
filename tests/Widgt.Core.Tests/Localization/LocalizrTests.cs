@@ -52,20 +52,18 @@ namespace Widgt.Core.Tests
             /// Null locale string == argument null exception
             /// </summary>
             [Test]
-            [ExpectedException(typeof(ArgumentNullException))]
             public void It_throws_an_ArgumentNullException_when_locale_string_is_null()
             {
-                Localizr.For(null);
+                Assert.Throws<ArgumentNullException>(() => Localizr.For(null));
             }
 
             /// <summary>
             /// Empty locale string == argument exception
             /// </summary>
             [Test]
-            [ExpectedException(typeof(ArgumentException))]
             public void It_throws_an_ArgumentException_when_locale_string_is_empty()
             {
-                Localizr.For(string.Empty);
+                Assert.Throws<ArgumentException>(() => Localizr.For(string.Empty));
             }
 
             /// <summary>
@@ -100,22 +98,20 @@ namespace Widgt.Core.Tests
             /// Null locale string == argument null exception
             /// </summary>
             [Test]
-            [ExpectedException(typeof(ArgumentNullException))]
             public void It_throws_an_ArgumentNullException_when_locale_string_is_null()
             {
                 // ReSharper disable once UnusedVariable
-                var locale = new LocaleName(null);
+                Assert.Throws<ArgumentNullException>(() => new LocaleName(null));
             }
 
             /// <summary>
             /// Empty locale string == argument exception
             /// </summary>
             [Test]
-            [ExpectedException(typeof(ArgumentException))]
             public void It_throws_an_ArgumentException_when_locale_string_is_empty()
             {
                 // ReSharper disable once UnusedVariable
-                var locale = new LocaleName(string.Empty);
+                Assert.Throws<ArgumentException>(() => new LocaleName(string.Empty));
             }
 
             /// <summary>

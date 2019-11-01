@@ -33,7 +33,6 @@ namespace Widgt.Owin.Hosting.Self
     using System.Web.Http.Dispatcher;
 
     using Microsoft.Owin.Cors;
-    using Microsoft.Practices.Unity;
 
     using global::Owin;
 
@@ -46,6 +45,7 @@ namespace Widgt.Owin.Hosting.Self
     using Widgt.Db;
     using Widgt.Features;
     using Widgt.SignalR;
+    using Unity;
 
     /// <summary>
     /// The startup class is used to configure the OWIN application

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.138
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Widgt.Core", "src\Widgt.Core\Widgt.Core.csproj", "{CC59011A-BCD7-4B3E-8195-BC476D49C0CC}"
 EndProject
@@ -26,13 +26,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Widgt.Owin.FeatureSupport", "src\Widgt.Owin.FeatureSupport\Widgt.Owin.FeatureSupport.csproj", "{0EF9CB48-9FB0-46E9-B09D-3DB39C3391DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Widgt.Api.Shared", "src\Widgt.Api.Shared\Widgt.Api.Shared.csproj", "{74A8EB57-1737-4891-BDD1-9F6AF3B1CA0D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{566C2995-93C3-46D2-92BA-D9E84C4A34BB}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -168,5 +161,8 @@ Global
 		{C8830C12-247F-4AF6-B287-5C330C52485C} = {36482E37-688E-4B73-9E16-7367FA987786}
 		{0EF9CB48-9FB0-46E9-B09D-3DB39C3391DD} = {A8F6DFB8-F015-46D2-BE8F-BD73F00B9E78}
 		{74A8EB57-1737-4891-BDD1-9F6AF3B1CA0D} = {A8F6DFB8-F015-46D2-BE8F-BD73F00B9E78}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEC4EEA1-DC86-42A1-95E2-774F1ECDB4F9}
 	EndGlobalSection
 EndGlobal

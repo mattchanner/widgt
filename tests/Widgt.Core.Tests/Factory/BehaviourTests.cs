@@ -33,7 +33,7 @@ namespace Widgt.Core.Tests.Parser
     using System.Xml.Linq;
 
     using NUnit.Framework;
-    
+
     using Widgt.Core;
     using Widgt.Core.Exceptions;
     using Widgt.Core.Model;
@@ -47,44 +47,44 @@ namespace Widgt.Core.Tests.Parser
         /// <summary>
         /// Expects an <see cref="ArgumentNullException"/> to be raised when given a null document to parse
         /// </summary>
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void Throws_ArgumentNullException_When_Passed_A_Null_Document()
         {
             ConfigFileParser parser = new ConfigFileParser();
-            parser.Parse((XDocument)null);
+            Assert.Throws<ArgumentNullException>(() => parser.Parse((XDocument)null));
         }
 
         /// <summary>
         /// Expects an <see cref="ArgumentNullException"/> to be raised when given a null document to parse
         /// </summary>
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void Throws_ArgumentNullException_When_Passed_A_Null_InputStream()
         {
             ConfigFileParser parser = new ConfigFileParser();
-            parser.Parse((Stream)null);
+            Assert.Throws<ArgumentNullException>(() => parser.Parse((Stream)null));
         }
 
         /// <summary>
         /// Given an empty document, the parser throws a <see cref="ConfigFileParseException"/>
         /// </summary>
-        [Test, ExpectedException(typeof(ConfigFileParseException))]
+        [Test]
         public void Throws_WidgetParserException_When_Passed_An_Empty_Document()
         {
             ConfigFileParser parser = new ConfigFileParser();
-            parser.Parse(new XDocument());
+            Assert.Throws<ConfigFileParseException>(() => parser.Parse(new XDocument()));
         }
 
         /// <summary>
         /// Given a document with a different root node, the parser throws a <see cref="ConfigFileParseException"/>
         /// </summary>
-        [Test, ExpectedException(typeof(ConfigFileParseException))]
+        [Test]
         public void Throws_WidgetParserException_When_Passed_A_Different_Document()
         {
             ConfigFileParser parser = new ConfigFileParser();
             const string Xml = "<wrong_root xmlns=\"http://www.w3.org/ns/widgets\" " +
                                             "id=\"widget_id\"></wrong_root>";
 
-            parser.Parse(XDocument.Parse(Xml));
+            Assert.Throws<ArgumentNullException>(() => parser.Parse(XDocument.Parse(Xml)));
         }
     }
 }

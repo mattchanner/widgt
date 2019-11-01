@@ -47,11 +47,12 @@ namespace Widgt.Core.Tests.Parser
         /// If the root element is not a widget element in the widget namespace, then the user agent MUST terminate 
         /// this algorithm and treat this widget package as an invalid widget package.
         /// </summary>
-        [Test, ExpectedException(typeof(ConfigFileParseException))]
+        [Test]
         public void If_root_element_is_not_a_widget_element_then_package_is_invalid()
         {
             ConfigFileParser parser = new ConfigFileParser();
-            parser.Parse(TestHelper.GetConfigurationFileAsXDocument("InvalidXmlRoot"));
+
+            Assert.Throws<ConfigFileParseException>(() => parser.Parse(TestHelper.GetConfigurationFileAsXDocument("InvalidXmlRoot")));
         }
 
         /// <summary>
@@ -59,11 +60,11 @@ namespace Widgt.Core.Tests.Parser
         /// If the root element is not a widget element in the widget namespace, then the user agent MUST terminate 
         /// this algorithm and treat this widget package as an invalid widget package.
         /// </summary>
-        [Test, ExpectedException(typeof(ConfigFileParseException))]
+        [Test]
         public void If_root_element_is_not_a_widget_namespaced_element_then_package_is_invalid()
         {
             ConfigFileParser parser = new ConfigFileParser();
-            parser.Parse(TestHelper.GetConfigurationFileAsXDocument("WidgetElementNotInWidgetNamespace"));
+            Assert.Throws<ConfigFileParseException>(() => parser.Parse(TestHelper.GetConfigurationFileAsXDocument("WidgetElementNotInWidgetNamespace")));
         }
     }
 }

@@ -81,9 +81,11 @@ namespace Widgt.WebApi.Controllers
         {
             LocaleName locale = GetLocaleName();
 
-            IEnumerable<WidgtDto> widgets = this.repository.GetWidgets()
-                                                                .AsEnumerable()
-                                                                .Select(w => w.ToApiModel(locale, this.options));
+            IEnumerable<WidgtDto> widgets = 
+                this.repository.GetWidgets()
+                    .AsEnumerable()
+                    .Select(w => w.ToApiModel(locale, this.options));
+
             return widgets;
         }
 
@@ -118,19 +120,13 @@ namespace Widgt.WebApi.Controllers
         /// Provides a mechanism to update a new widget
         /// </summary>
         /// <returns> The <see cref="Task"/> to process. </returns>
-        public async Task Put()
-        {
-            await DoAddOrUpdate();
-        }
+        public async Task Put() => await DoAddOrUpdate();
 
         /// <summary>
         /// Provides a mechanism to create a new widget
         /// </summary>
         /// <returns> The <see cref="Task"/> to process. </returns>
-        public async Task Post()
-        {
-            await DoAddOrUpdate();
-        }
+        public async Task Post() => await DoAddOrUpdate();
 
         /// <summary>
         /// Handles the deployment of a widget by supplied form data.  Note that the behaviour is the same for both

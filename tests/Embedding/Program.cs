@@ -38,7 +38,7 @@ namespace Embedding
     using System.Threading.Tasks;
 
     using CefSharp;
-
+    using CefSharp.WinForms;
     using Embedding.Client;
 
     using log4net.Config;
@@ -108,14 +108,18 @@ namespace Embedding
 
         private static void CefInit()
         {
+            //Monitor parent process exit and close subprocesses if parent process exits first
+            //This will at some point in the future becomes the default
+            CefSharpSettings.SubprocessExitIfParentProcessClosed = true;
+            Cef.EnableHighDPISupport();
+
             var settings = new CefSettings();
             settings.RemoteDebuggingPort = 8088;
             settings.LogSeverity = LogSeverity.Verbose;
+            settings.CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CefSharp\\Cache");
+            settings.CefCommandLineArgs.Add("enable-media-stream", "1");
 
-            if (!Cef.Initialize(settings))
-            {
-                Environment.Exit(0);
-            }
+            Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
         }
     }
 }
